@@ -9,9 +9,10 @@ import user5 from '../assets/users/user-5.jpg'
 
 export const HomePage = () => {
   return (
-    <div className="w-full min-h-full mx-auto text-center">
-      <div className="w-full p-10 flex flex-wrap">
-        <div className="max-w-screen-md text-start px-28 py-16 mx-auto flex flex-col gap-2">
+    <div className="w-full max-h-screen mx-auto text-center">
+      <div className="w-full p-10 flex flex-wrap max-h-full bg-gradient-to-b from-white via-white to-gray-50  ">
+        <div className="max-w-screen-md text-start px-28 py-16 mx-auto flex flex-col gap-2
+        mt-20">
           <h1 className="text-[2.5rem] leading-tight">
             <span className="font-bold">Your Personal Startup Mentor</span>— Get
             Expert Startup Advice,
@@ -76,7 +77,7 @@ export const HomePage = () => {
           </div>
         </div>
         <div className="max-w-screen-sm bg-blue-500 p-20 mx-auto text-start">
-          <h1 className="text-6xl font-normal">
+          <h1 className="text-6xl font-normal ">
             Ease your mind
             <br />
             on business operations.

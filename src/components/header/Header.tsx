@@ -16,8 +16,8 @@ import Logo from "../assets/FrLogo.png";
 
 export const Header = () => {
   return (
-    <div className="w-full max-h-screen items-center p-6 shadow-sm bg-white">
-      <div className="flex justify-around">
+    <div className="min-w-[96rem] max-h-screen shadow-sm items-center p-6 fixed bg-white">
+      <div className="flex justify-around mx-auto">
         <Link href={"/"} className="flex items-center gap-2">
           <Image src={Logo} alt="FoundrGuide" className="w-9 h-9" />
           <h1 className="font-semibold text-xl">
@@ -67,7 +67,7 @@ export const Header = () => {
         <div className="space-x-2">
           <Button
             variant={"outline"}
-            className="p-4 border border-blue-800 saturate-150 text-blue-800"
+            className="p-4 border border-blue-700 saturate-150 text-blue-700"
           >
             Get Started
           </Button>
