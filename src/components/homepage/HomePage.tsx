@@ -6,11 +6,12 @@ import user2 from '../assets/users/user-2.png'
 import user3 from '../assets/users/user-3.png'
 import user4 from '../assets/users/user-4.jpg'
 import user5 from '../assets/users/user-5.jpg'
+import carousel from '../assets/carouselfrg.png'
 
 export const HomePage = () => {
   return (
     <div className="w-full max-h-screen mx-auto text-center">
-      <div className="w-full p-10 flex flex-wrap max-h-full bg-gradient-to-b from-white via-white to-gray-50  ">
+      <div className="w-full p-10 flex flex-wrap max-h-full bg-gradient-to-b from-white via-white to-gray-100/70  ">
         <div className="max-w-screen-md text-start px-28 py-16 mx-auto flex flex-col gap-2
         mt-20">
           <h1 className="text-[2.5rem] leading-tight">
@@ -76,12 +77,8 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-screen-sm bg-blue-500 p-20 mx-auto text-start">
-          <h1 className="text-6xl font-normal ">
-            Ease your mind
-            <br />
-            on business operations.
-          </h1>
+        <div className="max-w-screen-sm p-20 mx-auto text-start ">
+         <Image src={carousel} alt="books" className="shadow-xl shadow-gray-100"/>
         </div>
       </div>
     </div>
