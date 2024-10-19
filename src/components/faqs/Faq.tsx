@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
+
 export function Accordionfg() {
   return (
     <Accordion type="single" collapsible className="w-full ">

@@ -37,7 +37,8 @@ export const Feature = () => {
             <div className=" w-1/4 text-start flex rounded-xl flex-col gap-2 p-5 bg-blue-200/40">
               <h2 className="font-semibold">Problem-Specific Solutions</h2>
               <p className="text-sm">
-              Receive tailored advice that directly addresses your startup’s unique challenges.
+                Receive tailored advice that directly addresses your startup’s
+                unique challenges.
               </p>
             </div>
           </div>
@@ -45,19 +46,22 @@ export const Feature = () => {
             <div className=" w-1/4 text-start flex flex-col rounded-xl gap-2 p-5 bg-blue-200/40">
               <h2 className="font-semibold">Deep Dives into Key Topics</h2>
               <p className="text-sm">
-              Explore in-depth advice on leadership, scaling, and team management when you need more than a summary.
+                Explore in-depth advice on leadership, scaling, and team
+                management when you need more than a summary.
               </p>
             </div>
             <div className=" w-1/4 text-start flex flex-col rounded-xl gap-2 p-5 bg-blue-200/40">
               <h2 className="font-semibold">Curated Book Recommendations</h2>
               <p className="text-sm">
-              Get personalized book suggestions based on your specific business challenges.
+                Get personalized book suggestions based on your specific
+                business challenges.
               </p>
             </div>
             <div className=" w-1/4 text-start flex flex-col rounded-xl gap-2 p-5 bg-blue-200/40">
               <h2 className="font-semibold">On-Demand Virtual Mentorship</h2>
               <p className="text-sm">
-              Access AI-powered mentorship anytime, with expert advice at your fingertips.
+                Access AI-powered mentorship anytime, with expert advice at your
+                fingertips.
               </p>
             </div>
           </div>
