@@ -1,6 +1,7 @@
 import { Check, ChevronRight } from "lucide-react";
 import React from "react";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 export const Insight = () => {
   return (
@@ -41,10 +42,12 @@ export const Insight = () => {
             >
               Learn more
             </Button>
+            <Link href={'sign-up'}>
             <Button variant={"ghost"} className="hover:text-blue-600">
               Sign Up
               <ChevronRight className="ml-1.5 w-5 h-5" />
             </Button>
+            </Link>
           </div>
         </div>
       </div>

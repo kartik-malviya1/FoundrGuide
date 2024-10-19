@@ -147,12 +147,13 @@ export function Header() {
           </h1>
         </Link>
         <Navigation />
+        <Link href={'sign-up'}>
         <Button
           variant={"outline"}
-          className="border border-blue-600 text-blue-600"
-        >
+          className="border border-blue-600 text-blue-600">
           Get Started
         </Button>
+            </Link>
       </div>
     </div>
   );
