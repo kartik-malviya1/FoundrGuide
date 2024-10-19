@@ -137,7 +137,7 @@ ListItem.displayName = "ListItem";
 
 export function Header() {
   return (
-    <div className="min-w-[96rem] max-h-screen shadow-sm items-center p-4 fixed bg-white">
+    <div className="min-w-[96rem] max-h-screen shadow-sm items-center p-5 fixed bg-white">
       <div className="flex text-center justify-around">
         <Link href={"/"} className="flex items-center gap-2">
           <Image src={Logo} alt="FoundrGuide" className="w-9 h-9" />
