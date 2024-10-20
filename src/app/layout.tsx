@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Be_Vietnam_Pro } from "next/font/google";
-import { Header } from "@/components/header/Header";
 import Head from "next/head";
 import { Footer } from "@/components/footer/Footer";
+import Header from "@/components/header/Header";
 
 const be_vietnam_pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {

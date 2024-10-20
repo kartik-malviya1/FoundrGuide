@@ -1,5 +1,3 @@
-"use client";
-
 import * as React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -15,6 +13,8 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
+import { UserButton } from "@clerk/nextjs";
+import { auth } from "@clerk/nextjs/server";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -135,7 +135,9 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-export function Header() {
+export default async function Header() {
+  const { userId } = await auth();
+  const isAuth = !!userId;
   return (
     <div className="min-w-[96rem] max-h-screen shadow-sm items-center p-5 fixed z-10 bg-white">
       <div className="flex text-center justify-around">
@@ -147,13 +149,25 @@ export function Header() {
           </h1>
         </Link>
         <Navigation />
-        <Link href={'sign-up'}>
-        <Button
-          variant={"outline"}
-          className="border border-blue-600 text-blue-600">
-          Get Started
-        </Button>
+        {isAuth ? (
+          <div className="flex gap-3">
+            <UserButton />
+            <Link href={"/user/dashboard"}>
+              <Button variant={"outline"} className="border-black">
+                Dashboard
+              </Button>
             </Link>
+          </div>
+        ) : (
+          <Link href={"sign-up"}>
+            <Button
+              variant={"outline"}
+              className="border border-blue-600 text-blue-600"
+            >
+              Get Started
+            </Button>
+          </Link>
+        )}
       </div>
     </div>
   );
