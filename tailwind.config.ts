@@ -1,5 +1,6 @@
 import type { Config } from "tailwindcss";
 
+
 const config: Config = {
     darkMode: ["class"],
     content: [
@@ -10,6 +11,7 @@ const config: Config = {
   theme: {
   	extend: {
   		colors: {
+				footercolor: "#1E212B",
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {

@@ -10,7 +10,7 @@ import carousel from "../assets/carouselfrg.png";
 
 export const HomePage = () => {
   return (
-    <div className="w-full max-h-screen mx-auto text-center">
+    <div className="w-full max-h-screen mx-auto text-center ">
       <div className="w-full p-10 flex flex-wrap max-h-full bg-gradient-to-b from-white via-white to-gray-100/70  ">
         <div
           className="max-w-screen-md text-start px-28 py-16 mx-auto flex flex-col gap-2
