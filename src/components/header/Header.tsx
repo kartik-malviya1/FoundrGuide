@@ -152,7 +152,7 @@ export default async function Header() {
         {isAuth ? (
           <div className="flex gap-3">
             <UserButton />
-            <Link href={"/user/dashboard"}>
+            <Link href={"/dashboard"}>
               <Button
                 variant={"outline"}
                 className="bg-footercolor/95 text-white hover: border-footercolor"
