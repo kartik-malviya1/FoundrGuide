@@ -153,7 +153,10 @@ export default async function Header() {
           <div className="flex gap-3">
             <UserButton />
             <Link href={"/user/dashboard"}>
-              <Button variant={"outline"} className="border-black">
+              <Button
+                variant={"outline"}
+                className="bg-footercolor/95 text-white hover: border-footercolor"
+              >
                 Dashboard
               </Button>
             </Link>
