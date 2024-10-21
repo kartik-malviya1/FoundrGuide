@@ -11,7 +11,7 @@ import Chatgpt from "../assets/chatgpt.svg";
 export const HomePage = () => {
   return (
     <div className="w-full max-h-screen mx-auto text-center">
-      <div className="w-full p-10 flex flex-wrap max-h-full bg-gradient-to-r from-gray-50 to-gray-100/80">
+      <div className="w-full p-10 flex flex-wrap max-h-full bg-white/70 ">
         <div
           className="max-w-screen-md text-start px-28 py-16 mx-auto flex flex-col gap-2
         mt-20"
@@ -103,7 +103,7 @@ export const HomePage = () => {
               alt="user image"
             />
           </div>
-          <div className="max-w-sm h-full bg-white rounded-xl border -mt-2 mb-2">
+          <div className="max-w-sm h-full bg-white shadow-md rounded-xl border -mt-2 mb-2">
             <div className="p-[0.6rem] flex flex-col gap-2">
               <div className="flex space-x-2 p-2">
                 <Image src={Chatgpt} alt="gpt" height={18} width={18} />

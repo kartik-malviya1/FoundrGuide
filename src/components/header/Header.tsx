@@ -139,7 +139,7 @@ export default async function Header() {
   const { userId } = await auth();
   const isAuth = !!userId;
   return (
-    <div className="min-w-[96rem] max-h-screen shadow-sm items-center p-5 fixed z-10 bg-white">
+    <div className="min-w-[96rem] max-h-screen bg-white items-center p-5 fixed z-10 ">
       <div className="flex text-center justify-around">
         <Link href={"/"} className="flex items-center gap-2">
           <Image src={Logo} alt="FoundrGuide" className="w-9 h-9" />
