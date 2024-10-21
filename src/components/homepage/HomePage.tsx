@@ -111,22 +111,24 @@ export const HomePage = () => {
               </div>
               <div className=" bg-gray-100 rounded-lg p-4">
                 <div className="flex flex-col gap-4 mb-5 text-base">
-                <p>
-                  Hi
-                  <span className="bg-blue-100 text-blue-600 ml-0.5 rounded-md p-1">
-                    Amy
-                  </span>,
-                </p>
-                <p>Congrats on starting your founder journey!</p>
-                <p>I&apos;m here if you need help with your free trial.</p>
-                <p>Here some getting started docs to check 
-                <span className="bg-gradient-to-r ml-1 from-gray-100 via-blue-100 to-blue-200">
-                  out:{" "} 
-                </span>
-                <span className="text-base font-semibold text-blue-600 -ml-[0.15rem]">
-                  |
-                </span>
-                </p>
+                  <p>
+                    Hi
+                    <span className="bg-blue-100 text-blue-600 ml-0.5 rounded-md p-1">
+                      Amy
+                    </span>
+                    ,
+                  </p>
+                  <p>Congrats on starting your founder journey!</p>
+                  <p>I&apos;m here if you need help with your free trial.</p>
+                  <p>
+                    Here some getting started docs to check
+                    <span className="bg-gradient-to-r ml-1 from-gray-100 via-blue-100 to-blue-200">
+                      out:{" "}
+                    </span>
+                    <span className="text-base font-semibold text-blue-600 -ml-[0.15rem]">
+                      |
+                    </span>
+                  </p>
                 </div>
               </div>
             </div>
