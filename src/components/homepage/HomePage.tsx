@@ -6,12 +6,12 @@ import user2 from "../assets/users/user-2.png";
 import user3 from "../assets/users/user-3.png";
 import user4 from "../assets/users/user-4.jpg";
 import user5 from "../assets/users/user-5.jpg";
-import carousel from "../assets/carouselfrg.png";
+import Chatgpt from "../assets/chatgpt.svg";
 
 export const HomePage = () => {
   return (
-    <div className="w-full max-h-screen mx-auto text-center ">
-      <div className="w-full p-10 flex flex-wrap max-h-full bg-gradient-to-b from-white via-white to-gray-100/70  ">
+    <div className="w-full max-h-screen mx-auto text-center">
+      <div className="w-full p-10 flex flex-wrap max-h-full bg-gradient-to-r from-gray-50 to-gray-100/80">
         <div
           className="max-w-screen-md text-start px-28 py-16 mx-auto flex flex-col gap-2
         mt-20"
@@ -79,14 +79,58 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-screen-sm p-20 mx-auto text-start">
-          <div className="pointer-events-none absolute max-w-[30rem] ml-[56.95rem] inset-x-0 top-28 h-32 bg-gradient-to-b from-slate-50" />
-          <Image
-            src={carousel}
-            alt="books"
-            className="shadow-xl shadow-gray-100"
-          />
-          <div className="pointer-events-none absolute max-w-[30rem] ml-[56.95rem] inset-x-0 bottom-0 h-32 bg-gradient-to-t from-slate-50" />
+        <div className="max-w-screen-sm py-40 px-9 flex mx-auto text-start">
+          <div className="flex flex-col gap-4 p-2 mr-4">
+            <Image
+              width={100}
+              height={100}
+              className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-200"
+              src={user3}
+              alt="user image"
+            />
+            <Image
+              width={100}
+              height={100}
+              className="inline-block h-10 w-10 rounded-full ring-2 ring-slate-200 opacity-60"
+              src={user4}
+              alt="user image"
+            />
+            <Image
+              width={100}
+              height={100}
+              className="inline-block h-10 w-10 rounded-full object-cover ring-2 ring-slate-200 opacity-60"
+              src={user5}
+              alt="user image"
+            />
+          </div>
+          <div className="max-w-sm h-full bg-white rounded-xl border -mt-2 mb-2">
+            <div className="p-[0.6rem] flex flex-col gap-2">
+              <div className="flex space-x-2 p-2">
+                <Image src={Chatgpt} alt="gpt" height={18} width={18} />
+                <p className="font-bold text-sm">Free trial users</p>
+              </div>
+              <div className=" bg-gray-100 rounded-lg p-4">
+                <div className="flex flex-col gap-4 mb-5 text-base">
+                <p>
+                  Hi
+                  <span className="bg-blue-100 text-blue-600 ml-0.5 rounded-md p-1">
+                    Amy
+                  </span>,
+                </p>
+                <p>Congrats on starting your founder journey!</p>
+                <p>I&apos;m here if you need help with your free trial.</p>
+                <p>Here some getting started docs to check 
+                <span className="bg-gradient-to-r ml-1 from-gray-100 via-blue-100 to-blue-200">
+                  out:{" "} 
+                </span>
+                <span className="text-base font-semibold text-blue-600 -ml-[0.15rem]">
+                  |
+                </span>
+                </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
