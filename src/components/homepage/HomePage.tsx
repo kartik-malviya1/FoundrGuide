@@ -83,7 +83,7 @@ export const HomePage = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-screen-sm py-40 px-9 flex mx-auto text-start">
+        <div className="max-w-screen-sm py-40 px-9 flex mx-auto text-start select-none">
           <div className="flex flex-col gap-4 p-2 mr-4">
             <Image
               width={100}
