@@ -49,7 +49,7 @@ export default function BookCarousel() {
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % bookSummaries.length)
-    }, 2000) // Change slide every 5 seconds
+    }, 2000) // Change slide every 2 seconds
 
     return () => clearInterval(timer)
   }, [])

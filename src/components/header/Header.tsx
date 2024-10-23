@@ -155,7 +155,7 @@ export default async function Header() {
             <Link href={"/dashboard"}>
               <Button
                 variant={"outline"}
-                className="bg-footercolor/95 text-white hover: border-footercolor"
+                className="border hover:bg-transparent hover:text-blue-600 hover:border-blue-600 border-footercolor bg-footercolor text-white"
               >
                 Dashboard
               </Button>
