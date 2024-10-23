@@ -3,8 +3,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import { Be_Vietnam_Pro } from "next/font/google";
 import Head from "next/head";
-import { Footer } from "@/components/footer/Footer";
-import Header from "@/components/header/Header";
+// import { Footer } from "@/components/footer/Footer";
+// import Header from "@/components/header/Header";
 
 const be_vietnam_pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
@@ -27,9 +27,9 @@ export default function RootLayout({
         </Head>
         <body className={be_vietnam_pro.className}>
           <div className="mx-auto container bg-white">
-            <Header />
+            {/* <Header /> */}
             {children}
-            <Footer />
+            {/* <Footer /> */}
           </div>
         </body>
       </html>

@@ -36,12 +36,12 @@ export default function Feature() {
   ]
 
   return (
-    <section className="py-16 px-4 text-black">
+    <section className="py-16 px-4 text-black mb-14">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-xl tracking-tight mb-5 px-4 py-1">
             <span className="bg-blue-100 px-3 py-1 items-center text-blue-800 rounded-2xl">Features</span></h2>
-          <p className="text-base max-w-2xl mx-auto">
+          <p className="text-base max-w-2xl mx-auto mt-8">
             Get personalized mentorship with AI-driven insights and expert strategies.
             FoundrGuide helps you overcome challenges and scale your business with ease.
           </p>

@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function Insight(){
   return (
     <div className="w-full min-h-full mx-auto p-10 text-center bg-gradient-to-b from-white via-white to-blue-100/50">
-      <div className="flex flex-col px-28 py-16 mx-auto">
+      <div className="flex flex-col px-28 py-2 mx-auto">
         <h2 className="text-xl text-start px-4 py-1">
           <span className="bg-blue-100 px-3 py-1 items-center text-blue-800 rounded-2xl">
             Insight
