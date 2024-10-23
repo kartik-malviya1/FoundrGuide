@@ -1,14 +1,14 @@
 import { Sparkles, Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import user1 from "../assets/users/user-1.png";
-import user2 from "../assets/users/user-2.png";
-import user3 from "../assets/users/user-3.png";
-import user4 from "../assets/users/user-4.jpg";
-import user5 from "../assets/users/user-5.jpg";
-import Chatgpt from "../assets/chatgpt.svg";
+import user1 from "@/public/assets/users/user-1.png";
+import user2 from "@/public/assets/users/user-2.png";
+import user3 from "@/public/assets/users/user-3.png";
+import user4 from "@/public/assets/users/user-4.jpg";
+import user5 from "@/public/assets/users/user-5.jpg";
+import Chatgpt from "@/public/assets/chatgpt.svg";
 
-export const HomePage = () => {
+export default function HomePage() {
   return (
     <div className="w-full max-h-screen mx-auto text-center">
       <div className="w-full p-10 flex flex-wrap max-h-full bg-white/70 ">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Logo from "../assets/FrLogo.png";
+import Logo from "@/public/assets/FrLogo.png";
 import Link from "next/link";
 import {
   InstagramLogoIcon,

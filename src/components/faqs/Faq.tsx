@@ -45,7 +45,7 @@ export function Accordionfg() {
   )
 }
 
-export const Faq = () => {
+export default function Faq() {
   return (
     <div className="w-full min-h-full mx-auto p-10 text-center bg-gradient-to-b from-white via-white to-blue-100/50">
       <div className="flex flex-col px-28 py-16 mx-auto">

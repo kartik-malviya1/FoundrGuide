@@ -1,7 +1,7 @@
-import { Faq } from "@/components/faqs/Faq";
-import { Feature } from "@/components/features/Feature";
-import { HomePage } from "@/components/homepage/HomePage";
-import { Insight } from "@/components/insight/Insight";
+import Faq  from "@/components/faqs/Faq";
+import Feature from "@/components/features/Feature";
+import HomePage  from "@/components/homepage/HomePage";
+import Insight  from "@/components/insight/Insight";
 
 export default function Home() {
   return (

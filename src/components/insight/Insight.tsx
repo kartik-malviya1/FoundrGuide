@@ -3,15 +3,15 @@ import React from "react";
 import { Button } from "../ui/button";
 import Link from "next/link";
 
-export const Insight = () => {
+export default function Insight(){
   return (
     <div className="w-full min-h-full mx-auto p-10 text-center bg-gradient-to-b from-white via-white to-blue-100/50">
       <div className="flex flex-col px-28 py-16 mx-auto">
-        <p className="text-lg text-start px-4 py-1">
+        <h2 className="text-xl text-start px-4 py-1">
           <span className="bg-blue-100 px-3 py-1 items-center text-blue-800 rounded-2xl">
             Insight
           </span>
-        </p>
+        </h2>
         <div className="text-start p-4 flex flex-col gap-5 flex-wrap max-w-screen-sm">
           <h1 className="font-semibold text-[2rem] flex flex-col">
             Unlock Knowledge with Tailored Book
