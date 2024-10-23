@@ -20,6 +20,7 @@ export default async function ChatInterface() {
   if (!userId) {
     redirect("/sign-in");
   }
+  
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-200 p-4 flex flex-col">
       <header className="flex justify-between items-center mb-8">
