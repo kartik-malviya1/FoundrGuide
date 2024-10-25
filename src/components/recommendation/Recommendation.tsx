@@ -73,7 +73,7 @@ export default function BookCarousel() {
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {bookSummaries.map((book, index) => (
-            <Card key={index} className="w-full flex-shrink-0 flex flex-wrap bg-white">
+            <Card key={index} className="w-full select-none flex-shrink-0 flex flex-wrap bg-white">
               <div className="flex flex-col md:flex-row">
                 <Image src={book.image} alt={book.title} width={1000} height={1000} className="w-full md:w-1/3 h-48 md:h-auto object-cover rounded-xl" />
                 <div className="flex flex-col justify-between p-6 md:w-2/3">

@@ -11,12 +11,12 @@ import Chatgpt from "@/public/assets/chatgpt.svg";
 export default function HomePage() {
   return (
     <div className="w-full max-h-screen mx-auto text-center">
-      <div className="w-full p-10 px-6 flex flex-wrap max-h-full bg-white/70 ">
+      <div className="w-full px-6 flex flex-wrap max-h-full bg-white/70 ">
         <div
-          className="max-w-screen-md text-start px-28 py-12 mx-auto flex flex-col gap-2
+          className="max-w-screen-md text-start px-28 py-6 mx-auto flex flex-col gap-2
         mt-20"
         >
-          <div className="flex items-center max-w-[15.2rem] space-x-2 font-medium text-zinc-900 border border-gray-500 backdrop-blur-sm rounded-full px-4 py-2">
+          <div className="select-none flex items-center max-w-[15.2rem] space-x-2 font-medium text-zinc-900 border border-gray-500 backdrop-blur-sm rounded-full px-4 py-2">
             <Sparkles className="w-5 h-5 fill-blue-600 text-blue-600 " />
             <p className="text-sm">For the Startup Dreamers</p>
           </div>
@@ -83,7 +83,7 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-        <div className="max-w-screen-sm py-40 px-9 flex mx-auto text-start select-none">
+        <div className="max-w-screen-sm py-32 px-9 flex mx-auto text-start select-none">
           <div className="flex flex-col gap-4 p-2 mr-4">
             <Image
               width={100}

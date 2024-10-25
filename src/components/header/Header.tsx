@@ -165,7 +165,7 @@ export default async function Header() {
           <Link href={"sign-up"}>
             <Button
               variant={"outline"}
-              className="border border-blue-600 text-blue-600"
+              className="border bg-transparent text-blue-600 border-blue-600 hover:bg-blue-700 hover:text-white"
             >
               Get Started
             </Button>
