@@ -3,10 +3,8 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Avatar, } from "@/components/ui/avatar"
-import { Hand, Plane, Settings, Wand2 } from "lucide-react"
+import { Hand, Plane, Settings, Sparkles, Wand2 } from "lucide-react"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
-import Image from "next/image"
-import Logo from '@/public/assets/FrLogo.png'
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 import { UserButton } from "@clerk/nextjs"
@@ -24,10 +22,9 @@ export default async function ChatInterface() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-200 p-4 flex flex-col">
       <header className="flex justify-between items-center mb-8">
-          <Link href={'/api/chat'}>
+          <Link href={'/dashboard/chat'}>
         <div className="flex items-center space-x-2">
-          <Image src={Logo} alt="Logo" width={30} height={30} />
-          <h2 className="text-xl font-semibold text-black">Foundr<span className="text-blue-600">Guide</span></h2>
+         <h2 className="text-2xl font-semibold text-blue-800 flex items-center gap-1"><Sparkles/></h2>
         </div>
           </Link>
           <UserButton />
