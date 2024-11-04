@@ -3,7 +3,7 @@ import { Card, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Avatar, } from "@/components/ui/avatar"
-import { Hand, Plane, Settings, Sparkles, Wand2 } from "lucide-react"
+import { Hand, Plane, Sparkles, Wand2 } from "lucide-react"
 import { ArrowTopRightIcon } from "@radix-ui/react-icons"
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
@@ -20,7 +20,7 @@ export default async function ChatInterface() {
   }
   
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 to-blue-200 p-4 flex flex-col">
+    <div className="min-h-screen bg-gray-50 p-4 flex flex-col">
       <header className="flex justify-between items-center mb-8">
           <Link href={'/dashboard/chat'}>
         <div className="flex items-center space-x-2">
@@ -32,7 +32,7 @@ export default async function ChatInterface() {
 
       <main className="flex-grow flex flex-col items-center justify-center space-y-6 mb-8">
         <Avatar className="w-20 h-20 bg-blue-600">
-          <Hand className="w-10 h-10 text-white" />
+          <Hand className="w-20 h-20 p-4 text-white" />
         </Avatar>
         <h1 className="text-2xl font-semibold text-blue-800">Hi, Kartik</h1>
         <h2 className="text-3xl font-bold text-blue-900">Can I help you with anything?</h2>
@@ -64,10 +64,7 @@ export default async function ChatInterface() {
       </div>
 
       <footer className="flex items-center space-x-2 mx-auto w-7/12">
-        <Button variant="outline" size="icon" className="rounded-full">
-          <Settings className="w-4 h-4" />
-        </Button>
-        <div className="flex-grow relative ">
+        <div className="flex-grow relative">
           <Input
             type="text"
             placeholder="Ask Foundr anything..."

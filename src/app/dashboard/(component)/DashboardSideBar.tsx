@@ -25,7 +25,7 @@ export default function Sidebar() {
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}
-      <aside className="w-64 bg-white shadow-md">
+      <aside className="w-64 bg-white shadow-md ">
         <div className="p-4">
           <Link href="/dashboard/for-you" className="flex items-center space-x-2">
             <Image src={Logo} alt='FoundrGuide' width={100} height={100} className='w-6 h-6 '/>

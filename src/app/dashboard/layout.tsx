@@ -1,4 +1,5 @@
-import DashboardSideBar from './(component)/DashboardSideBar'
+import { SignedIn } from '@clerk/nextjs';
+import DashboardSideBar from './(component)/DashboardSideBar';
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -7,10 +8,12 @@ export default function RootLayout({
   return (
       <html lang="en">
         <body>
-          <div className="mx-auto container flex">
-            <DashboardSideBar/>
-            {children}
-          </div>
+            <SignedIn>
+              <div className="mx-auto container flex">
+                <DashboardSideBar/>
+                {children}
+              </div>
+            </SignedIn>
         </body>
       </html>
   )}

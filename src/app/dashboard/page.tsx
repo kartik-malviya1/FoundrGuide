@@ -8,8 +8,5 @@ export default async function page() {
     if (!userId) {
       redirect("/sign-in");
     }
-    else{
-      redirect("/dashboard/for-you")
-    }
 }
 
