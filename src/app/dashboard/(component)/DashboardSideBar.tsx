@@ -21,7 +21,6 @@ const bottomItems = [
 
 export default function Sidebar() {
   const pathname = usePathname()
-
   return (
     <div className="flex h-screen bg-gray-100">
       {/* Sidebar */}

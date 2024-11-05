@@ -11,7 +11,7 @@ import Chatgpt from "@/public/assets/chatgpt.svg";
 export default function HomePage() {
   return (
     <div className="w-full max-h-screen mx-auto text-center">
-      <div className="w-full px-6 flex flex-wrap max-h-full bg-white/70 ">
+      <div className="w-full px-6 flex flex-wrap max-h-full bg-white/70 mb-4 ">
         <div
           className="max-w-screen-md text-start px-28 py-6 mx-auto flex flex-col gap-2
         mt-20"
