@@ -4,12 +4,13 @@
   "type": "module",
   "private": true,
   "scripts": {
-  "start": "tsx watch ./src/index.ts",
-  "dev": "next dev",
-  "build": "next build",
-  "lint": "next lint"
-},
+    "start": "tsx watch ./src/index.ts",
+    "dev": "next dev",
+    "build": "next build",
+    "lint": "next lint"
+  },
   "dependencies": {
+    "@clerk/clerk-sdk-node": "^5.0.59",
     "@clerk/nextjs": "^5.7.5",
     "@next/font": "^14.2.15",
     "@radix-ui/react-accordion": "^1.2.0",
