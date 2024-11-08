@@ -12,7 +12,7 @@ import goodtpgreat from '@/public/assets/cover-pages/goodtpgreat.jpg'
 import theleanstartup from '@/public/assets/cover-pages/theleanstartup.jpg'
 import Image from "next/image"
 
-const bookSummaries = [
+const bookCover = [
   {
     title: "The Lean Startup",
     author: "Eric Ries",
@@ -48,18 +48,18 @@ export default function BookCarousel() {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % bookSummaries.length)
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % bookCover.length)
     }, 2000) // Change slide every 2 seconds
 
     return () => clearInterval(timer)
   }, [])
 
   const nextSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex + 1) % bookSummaries.length)
+    setCurrentIndex((prevIndex) => (prevIndex + 1) % bookCover.length)
   }
 
   const prevSlide = () => {
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + bookSummaries.length) % bookSummaries.length)
+    setCurrentIndex((prevIndex) => (prevIndex - 1 + bookCover.length) % bookCover.length)
   }
 
   return (
@@ -72,7 +72,7 @@ export default function BookCarousel() {
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
-          {bookSummaries.map((book, index) => (
+          {bookCover.map((book, index) => (
             <Card key={index} className="w-full select-none flex-shrink-0 flex flex-wrap bg-white">
               <div className="flex flex-col md:flex-row">
                 <Image src={book.image} alt={book.title} width={1000} height={1000} className="w-full md:w-1/3 h-48 md:h-auto object-cover rounded-xl" />
@@ -120,7 +120,7 @@ export default function BookCarousel() {
         <ChevronRight className="h-4 w-4" />
       </Button>
       <div className="flex justify-center mt-4 space-x-2">
-        {bookSummaries.map((_, index) => (
+        {bookCover.map((_, index) => (
           <Button
             key={index}
             variant="outline"

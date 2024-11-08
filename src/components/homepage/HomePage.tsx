@@ -110,7 +110,7 @@ export default function HomePage() {
           <div className="max-w-sm h-full bg-white shadow-md rounded-xl border -mt-2 mb-2">
             <div className="p-[0.6rem] flex flex-col gap-2">
               <div className="flex space-x-2 p-2">
-                <Image src={Chatgpt} alt="gpt" height={18} width={18} />
+                <Image src={Chatgpt} alt="gpt" height={100} width={100} className="h-6 w-6" />
                 <p className="font-bold text-sm">Free trial users</p>
               </div>
               <div className=" bg-gray-100 rounded-lg p-4">
