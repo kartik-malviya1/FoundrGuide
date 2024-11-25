@@ -47,15 +47,15 @@ export function Accordionfg() {
 
 export default function Faq() {
   return (
-    <div className="w-full min-h-full mx-auto p-10 text-center bg-gradient-to-b from-white via-white to-blue-100/50">
-      <div className="flex flex-col px-28 py-16 mx-auto">
-        <h2 className='text-4xl font-semibold bg-gradient-to-bl from-blue-500 to-blue-700 bg-clip-text text-transparent'>Frequently Asked Questions!</h2>
-      <p className="text-sm text-start px-4 py-1 mt-10">
-          <span className="bg-blue-100 px-3 py-1 items-center ml-5 text-blue-800 rounded-2xl">
+    <div className="w-full min-h-full mx-auto p-4 md:p-10 text-center bg-gradient-to-b from-white via-white to-blue-100/50">
+      <div className="flex flex-col px-4 md:px-28 py-8 md:py-16 mx-auto">
+        <h2 className='text-3xl md:text-4xl font-semibold bg-gradient-to-bl from-blue-500 to-blue-700 bg-clip-text text-transparent'>Frequently Asked Questions!</h2>
+        <p className="text-sm text-start px-2 md:px-4 py-1 mt-6 md:mt-10">
+          <span className="bg-blue-100 px-3 py-1 items-center ml-2 md:ml-5 text-blue-800 rounded-2xl">
             WE&apos;VE GOT ANSWERS
           </span>
         </p>
-        <div className='flex flex-wrap min-w-fit text-start p-10'>
+        <div className='flex flex-wrap min-w-fit text-start p-4 md:p-10'>
           <Accordionfg /> 
         </div>
       </div>

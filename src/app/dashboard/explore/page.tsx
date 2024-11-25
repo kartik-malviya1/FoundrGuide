@@ -1,14 +1,6 @@
-// import { auth } from "@clerk/nextjs/server";
-// import { redirect } from "next/navigation";
-
 import { Search } from "lucide-react";
 
 export default async function Explore(){
-  // const { userId } = await auth();
-    
-  // if (!userId) {
-  //   redirect("/sign-in");
-  // }
   return (
     <main className="flex-1 overflow-y-auto p-8">
       <header className="mb-8 flex items-center justify-between">

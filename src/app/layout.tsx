@@ -29,7 +29,7 @@ export default function RootLayout({
         <body className={be_vietnam_pro.className}>
           <div className="mx-auto container bg-white">
             <Header />
-            <main className="pt-16">
+            <main className="pt-14">
             {children}
             </main>
             <Footer />

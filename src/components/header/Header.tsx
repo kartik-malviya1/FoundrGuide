@@ -1,3 +1,5 @@
+'use client';
+
 import * as React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
@@ -13,8 +15,13 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
-import { UserButton } from "@clerk/nextjs";
-import { auth } from "@clerk/nextjs/server";
+import { UserButton, useAuth } from "@clerk/nextjs";
+import { Menu, ChevronDown } from "lucide-react";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 
 const components: { title: string; href: string; description: string }[] = [
   {
@@ -53,10 +60,120 @@ const components: { title: string; href: string; description: string }[] = [
   },
 ];
 
+function MobileNav() {
+  const [isResourcesOpen, setIsResourcesOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  return (
+    <Sheet open={isOpen} onOpenChange={setIsOpen}>
+      <SheetTrigger asChild>
+        <Button 
+          variant="ghost" 
+          size="sm"
+          className="md:hidden p-2"
+        >
+          <Menu className="h-5 w-5" />
+          <span className="sr-only">Open menu</span>
+        </Button>
+      </SheetTrigger>
+      <SheetContent 
+        side="right" 
+        className="w-full sm:w-[350px] pr-0"
+      >
+        <nav className="flex flex-col items-center text-center h-full pt-8">
+          <Link href="/" className="flex items-center gap-2 mb-8" onClick={() => setIsOpen(false)}>
+            <Image src={Logo} alt="FoundrGuide" className="h-6 w-6" />
+            <span className="text-base font-semibold">
+              Foundr<span className="text-blue-800">Guide.</span>
+            </span>
+          </Link>
+
+          <div className="flex flex-col items-center space-y-4 w-full px-4">
+            <Link 
+              href="/" 
+              className="w-full py-2 text-sm hover:text-blue-600 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Home
+            </Link>
+            
+            <Link 
+              href="/how-it-works" 
+              className="w-full py-2 text-sm hover:text-blue-600 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              How It Works
+            </Link>
+            
+            <Link 
+              href="/book-summaries" 
+              className="w-full py-2 text-sm hover:text-blue-600 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              Book Summaries
+            </Link>
+
+            {/* Resources Dropdown */}
+            <div className="w-full">
+              <button
+                onClick={() => setIsResourcesOpen(!isResourcesOpen)}
+                className="w-full py-2 text-sm hover:text-blue-600 transition-colors flex items-center justify-center gap-2"
+              >
+                Resources
+                <ChevronDown 
+                  className={`h-4 w-4 transition-transform duration-200 ${
+                    isResourcesOpen ? "rotate-180" : ""
+                  }`}
+                />
+              </button>
+              
+              {isResourcesOpen && (
+                <div className="mt-2 py-2 px-4 bg-gray-50 rounded-md">
+                  {components.map((component) => (
+                    <Link
+                      key={component.title}
+                      href={component.href}
+                      className="block py-2 text-sm hover:text-blue-600 transition-colors"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {component.title}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link 
+              href="/about" 
+              className="w-full py-2 text-sm hover:text-blue-600 transition-colors"
+              onClick={() => setIsOpen(false)}
+            >
+              About Us
+            </Link>
+
+            {/* Auth Button for Mobile */}
+            <div className="pt-4 w-full">
+              <Link href="/auth/sign-up" className="block" onClick={() => setIsOpen(false)}>
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="w-full whitespace-nowrap border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
+                  Get Started
+                </Button>
+              </Link>
+            </div>
+          </div>
+        </nav>
+      </SheetContent>
+    </Sheet>
+  );
+}
+
 export function Navigation() {
   return (
-    <NavigationMenu>
-      <NavigationMenuList>
+    <NavigationMenu className="hidden lg:block">
+      <NavigationMenuList className="flex gap-2">
         <NavigationMenuItem>
           <Link href="/" legacyBehavior passHref>
             <NavigationMenuLink className={navigationMenuTriggerStyle()}>
@@ -83,13 +200,13 @@ export function Navigation() {
             Resources
           </NavigationMenuTrigger>
           <NavigationMenuContent>
-            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+            <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px]">
               {components.map((component) => (
                 <ListItem
-                  className="hover:text-blue-600 text-start"
                   key={component.title}
                   title={component.title}
                   href={component.href}
+                  className="hover:text-blue-600"
                 >
                   {component.description}
                 </ListItem>
@@ -135,43 +252,65 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-export default async function Header() {
-  const { userId } = await auth();
+export default function Header() {
+  const { userId } = useAuth();
   const isAuth = !!userId;
+  
   return (
-    <div className="min-w-[96rem] max-h-screen bg-white items-center p-5 fixed z-10 ">
-      <div className="flex text-center justify-around">
-        <Link href={"/"} className="flex items-center gap-2">
-          <Image src={Logo} alt="FoundrGuide" className="w-9 h-9" />
-          <h1 className="font-semibold text-xl">
-            Foundr
-            <span className="text-blue-800 saturate-150">Guide.</span>
-          </h1>
-        </Link>
-        <Navigation />
-        {isAuth ? (
-          <div className="flex gap-3">
-            <UserButton />
-            <Link href={"/dashboard/for-you"}>
-              <Button
-                variant={"outline"}
-                className="border hover:bg-transparent hover:text-blue-600 hover:border-blue-600 border-footercolor bg-footercolor text-white"
-              >
-                Dashboard
-              </Button>
-            </Link>
-          </div>
-        ) : (
-          <Link href={"sign-up"}>
-            <Button
-              variant={"outline"}
-              className="border bg-transparent text-blue-600 border-blue-600 hover:bg-blue-700 hover:text-white"
-            >
-              Get Started
-            </Button>
+    <header className="sticky top-0 z-40 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+      <div className="container mx-auto">
+        <div className="flex h-16 py-4 items-center justify-between px-4 lg:justify-around lg:px-10 lg:gap-10">
+          {/* Logo Section */}
+          <Link href="/" className="flex items-center gap-2 shrink-0">
+            <Image 
+              src={Logo} 
+              alt="FoundrGuide" 
+              className="h-7 w-7 md:h-8 md:w-8" 
+              priority 
+            />
+            <h1 className="text-base font-semibold md:text-lg whitespace-nowrap">
+              Foundr<span className="text-blue-800">Guide.</span>
+            </h1>
           </Link>
-        )}
+          
+          {/* Navigation Section - Hidden on mobile */}
+          <div className="hidden lg:flex lg:flex-1 lg:justify-center">
+            <Navigation />
+          </div>
+          
+          {/* Actions Section */}
+          <div className="flex items-center gap-2 md:gap-4">
+            {isAuth ? (
+              <>
+                <UserButton afterSignOutUrl="/" />
+                <Link href="/dashboard/for-you" className="hidden md:block">
+                  <Button
+                    variant="outline"
+                    size="default"
+                    className="whitespace-nowrap border-blue-600 text-blue-600 hover:bg-blue-700 hover:text-white"
+                  >
+                    Dashboard
+                  </Button>
+                </Link>
+              </>
+            ) : (
+              <Link href="/auth/sign-up" className="hidden md:block">
+                <Button
+                  variant="outline"
+                  size="sm"
+                  className="whitespace-nowrap border-blue-600 text-blue-600 hover:bg-blue-50"
+                >
+                  Get Started
+                </Button>
+              </Link>
+            )}
+            {/* Mobile Navigation - Only visible on mobile */}
+            <div className="lg:hidden">
+              <MobileNav />
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
+    </header>
   );
 }

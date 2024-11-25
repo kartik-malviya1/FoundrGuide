@@ -18,6 +18,7 @@ export default async function ChatInterface() {
   if (!userId) {
     redirect("/sign-in");
   }
+
   
   return (
     <div className="min-h-screen bg-gray-50 p-4 flex flex-col">
@@ -67,7 +68,7 @@ export default async function ChatInterface() {
         <div className="flex-grow relative">
           <Input
             type="text"
-            placeholder="Ask Foundr anything..."
+            placeholder="Ask anything..."
             className=" rounded-full bg-white/80"
           />
           <Button className="absolute right-0 top-1/2  -translate-y-1/2 rounded-full px-4">

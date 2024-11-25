@@ -63,31 +63,44 @@ export default function BookCarousel() {
   }
 
   return (
-    <div className="relative w-full max-w-7xl mx-auto py-10 px-40 bg-blue-50 rounded-xl">
-      <h2 className=" text-2xl items-center text-blue-800 mb-16 text-center">
-        <span className="bg-blue-100 rounded-3xl px-4 py-1.5">Featured Book Summaries</span>
-        </h2>
+    <div className="relative w-full mx-auto py-6 md:py-10 px-4 md:px-40 bg-blue-50 rounded-xl">
+      <h2 className="text-xl md:text-2xl items-center text-blue-800 mb-8 md:mb-16 text-center">
+        <span className="bg-blue-100 rounded-3xl px-3 py-1 md:px-4 md:py-1.5">
+          Featured Book Summaries
+        </span>
+      </h2>
+      
       <div className="relative overflow-hidden rounded-lg shadow-lg">
         <div
           className="flex transition-transform duration-500 ease-in-out"
           style={{ transform: `translateX(-${currentIndex * 100}%)` }}
         >
           {bookCover.map((book, index) => (
-            <Card key={index} className="w-full select-none flex-shrink-0 flex flex-wrap bg-white">
+            <Card key={index} className="w-full select-none flex-shrink-0 bg-white">
               <div className="flex flex-col md:flex-row">
-                <Image src={book.image} alt={book.title} width={1000} height={1000} className="w-full md:w-1/3 h-48 md:h-auto object-cover rounded-xl" />
-                <div className="flex flex-col justify-between p-6 md:w-2/3">
+                <Image 
+                  src={book.image} 
+                  alt={book.title} 
+                  width={1000} 
+                  height={1000} 
+                  className="w-full md:w-1/3 h-48 md:h-auto object-cover rounded-t-xl md:rounded-l-xl md:rounded-t-none" 
+                />
+                <div className="flex flex-col justify-between p-4 md:p-6 md:w-2/3">
                   <div>
-                    <CardHeader className="p-0 mb-4">
-                      <CardTitle className="text-2xl text-blue-900">{book.title}</CardTitle>
+                    <CardHeader className="p-0 mb-2 md:mb-4">
+                      <CardTitle className="text-xl md:text-2xl text-blue-900">
+                        {book.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent className="p-0">
-                      <p className="text-blue-700 mb-4">{book.description}</p>
+                      <p className="text-sm md:text-base text-blue-700 mb-4">
+                        {book.description}
+                      </p>
                     </CardContent>
                   </div>
-                  <CardFooter className="p-0 flex items-center justify-between text-sm text-blue-500">
+                  <CardFooter className="p-0 flex flex-wrap gap-4 md:gap-0 md:flex-nowrap items-center justify-between text-xs md:text-sm text-blue-500">
                     <div className="flex items-center space-x-2">
-                      <Avatar className="w-6 h-6">
+                      <Avatar className="w-5 h-5 md:w-6 md:h-6">
                         <AvatarFallback>{book.author[0]}</AvatarFallback>
                       </Avatar>
                       <span>{book.author}</span>
@@ -103,40 +116,44 @@ export default function BookCarousel() {
           ))}
         </div>
       </div>
+
       <Button
         variant="outline"
         size="icon"
-        className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
+        className="absolute left-0 md:left-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white h-8 w-8 md:h-10 md:w-10"
         onClick={prevSlide}
       >
         <ChevronLeft className="h-4 w-4" />
       </Button>
+      
       <Button
         variant="outline"
         size="icon"
-        className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white"
+        className="absolute right-0 md:right-2 top-1/2 transform -translate-y-1/2 bg-white/80 hover:bg-white h-8 w-8 md:h-10 md:w-10"
         onClick={nextSlide}
       >
         <ChevronRight className="h-4 w-4" />
       </Button>
+
       <div className="flex justify-center mt-4 space-x-2">
         {bookCover.map((_, index) => (
           <Button
             key={index}
             variant="outline"
             size="sm"
-            className={`w-3 h-3 rounded-full p-0 ${
+            className={`w-2 h-2 md:w-3 md:h-3 rounded-full p-0 ${
               index === currentIndex ? 'bg-blue-600' : 'bg-blue-200'
             }`}
             onClick={() => setCurrentIndex(index)}
           />
         ))}
       </div>
-      <div className="text-center mt-11">
+
+      <div className="text-center mt-6 md:mt-11">
         <Link href="/book-summaries" passHref>
-          <Button variant="outline" className="border-blue-500 text-blue-500 hover:bg-blue-50">
+          <Button variant="outline" className="text-sm md:text-base border-blue-500 text-blue-500 hover:bg-blue-50">
             View More
-            <BookOpen className="ml-2 h-4 w-4" />
+            <BookOpen className="ml-2 h-3 w-3 md:h-4 md:w-4" />
           </Button>
         </Link>
       </div>

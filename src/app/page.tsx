@@ -6,7 +6,7 @@ import Insight  from "@/components/insight/Insight";
 
 export default function Home() {
   return (
-    <div className="w-full min-h-screen bg-white">
+    <div className="min-h-screen bg-white">
       <HomePage />
       <Insight />
       <Feature />
