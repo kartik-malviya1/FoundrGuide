@@ -297,8 +297,8 @@ export default function Header() {
               <Link href="/auth/sign-up" className="hidden md:block">
                 <Button
                   variant="outline"
-                  size="sm"
-                  className="whitespace-nowrap border-blue-600 text-blue-600 hover:bg-blue-50"
+                  size="default"
+                  className="whitespace-nowrap border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
                 >
                   Get Started
                 </Button>

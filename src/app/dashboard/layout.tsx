@@ -10,9 +10,11 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <SignedIn>
-          <div className="flex min-h-screen flex-col md:flex-row">
-            <DashboardSideBar/>
-            <div className="flex-1 w-full">{children}</div>
+          <div className="min-h-screen bg-gray-50">
+            <DashboardSideBar />
+            <main className="md:ml-64">
+              {children}
+            </main>
           </div>
         </SignedIn>
       </body>
