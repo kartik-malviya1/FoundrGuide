@@ -1,3 +1,4 @@
+import Header from "@/components/header/Header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { UserPlus, MessageSquare, BookOpen, LineChart, MessageCircle, CheckCircle } from "lucide-react"
@@ -48,7 +49,10 @@ export default function HowItWorks() {
   ]
 
   return (
+    <>
+      <Header />
     <div className="container mx-auto px-4 py-12">
+      <div className="mb-4"></div>
       <h1 className="text-4xl font-bold text-center mb-8">How It Works</h1>
       <p className="text-xl text-center mb-20 max-w-3xl mx-auto">
         FoundrGuide is designed to help startup founders get personalized advice and insights from the world&apos;s best business minds. We simplify the process of finding answers to your toughest startup questions, so you can focus on what matters most—building your business.
@@ -90,5 +94,6 @@ export default function HowItWorks() {
         </Link>
       </div>
     </div>
+    </>
   )
 }

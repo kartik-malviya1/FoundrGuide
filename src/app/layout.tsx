@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
-import "./globals.css";
 import { Be_Vietnam_Pro } from "next/font/google";
 import Head from "next/head";
-import Header from "@/components/header/Header";
-import { Footer } from "@/components/footer/Footer";
-
+import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const be_vietnam_pro = Be_Vietnam_Pro({ subsets: ["latin"], weight: "400" });
 export const metadata: Metadata = {
@@ -28,11 +26,10 @@ export default function RootLayout({
         </Head>
         <body className={be_vietnam_pro.className}>
           <div className="mx-auto container bg-white">
-            <Header />
-            <main className="pt-14">
-            {children}
+            <main className="pt-0">
+              {children}
+              <Toaster />
             </main>
-            <Footer />
           </div>
         </body>
       </html>

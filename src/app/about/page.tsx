@@ -1,3 +1,4 @@
+import Header from "@/components/header/Header"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
@@ -5,6 +6,8 @@ import Link from "next/link"
 
 export default function AboutPage() {
   return (
+    <>
+    <Header />
     <div className="container mx-auto px-4 py-8 mt-4 max-w-4xl">
       <h1 className="text-4xl font-bold mb-8 text-center">About Foundr<span className="text-blue-600">Guide</span></h1>
       
@@ -86,5 +89,6 @@ export default function AboutPage() {
         </Link>
       </section>
     </div>
+    </>
   )
 }

@@ -10,7 +10,7 @@ import Chatgpt from "@/public/assets/chatgpt.svg";
 
 export default function HomePage() {
   return (
-    <div className="w-full min-h-screen mx-auto text-center">
+    <div className="w-full min-h-screen mx-auto text-center mt-6">
       <div className="w-full px-4 md:px-6 flex flex-col md:flex-row items-center justify-center lg:-mt-14 -mt-10 bg-white/70 sm:py-8 lg:pt-0 md:py-14">
         {/* Hero Section */}
         <div className="w-full max-w-screen-md text-center md:text-start px-4 md:px-28 py-4 md:py-6 mx-auto flex flex-col gap-4 mt-8 md:mt-20">
