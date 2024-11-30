@@ -25,7 +25,7 @@ export default function RootLayout({
           <title>FoundrGuide</title>
         </Head>
         <body className={be_vietnam_pro.className}>
-          <div className="mx-auto container bg-white">
+          <div className="mx-auto bg-white">
             <main className="pt-0">
               {children}
               <Toaster />
