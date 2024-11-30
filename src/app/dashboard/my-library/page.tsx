@@ -1,9 +1,7 @@
-import { Search } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { BookMarked, CheckCircle, MoreVertical, Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
-import { MoreVertical, BookMarked, CheckCircle } from "lucide-react";
-import { Card } from "@/components/ui/card";
 
 interface Book {
   title: string;

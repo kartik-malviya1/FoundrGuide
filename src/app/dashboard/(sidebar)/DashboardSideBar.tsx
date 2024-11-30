@@ -2,7 +2,7 @@
 import { SignOutButton } from '@clerk/nextjs'
 import { Home, Search, Library, Highlighter, Settings, HelpCircle, LogOut, Menu, X, MessageSquare, Plus, Trash2, LucideIcon } from 'lucide-react'
 import { usePathname, useRouter } from 'next/navigation'
-import Logo from '@/public/assets/FrLogo.png'
+import Logo from '@/public/FrLogo.png'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useState, useEffect, useCallback, useMemo } from 'react'
