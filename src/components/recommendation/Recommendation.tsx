@@ -6,10 +6,10 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/componen
 import { Avatar, AvatarFallback } from "@/components/ui/avatar"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight, Clock, BookOpen } from "lucide-react"
-import zeroToOne from '@/public/assets/cover-pages/zerotoone.jpg'
-import theinnovatorsdilemma from '@/public/assets/cover-pages/theinnovatorsdilemma.jpg'
-import goodtpgreat from '@/public/assets/cover-pages/goodtpgreat.jpg'
-import theleanstartup from '@/public/assets/cover-pages/theleanstartup.jpg'
+import zeroToOne from '@/public/cover-pages/zerotoone.jpg'
+import theinnovatorsdilemma from '@/public/cover-pages/theinnovatorsdilemma.jpg'
+import goodtpgreat from '@/public/cover-pages/goodtpgreat.jpg'
+import theleanstartup from '@/public/cover-pages/theleanstartup.jpg'
 import Image from "next/image"
 
 const bookCover = [

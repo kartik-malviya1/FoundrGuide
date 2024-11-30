@@ -4,7 +4,7 @@ import * as React from "react";
 import Link from "next/link";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import Logo from "@/public/assets/FrLogo.png";
+import Logo from "@/public/FrLogo.png";
 import { cn } from "@/lib/utils";
 import {
   NavigationMenu,

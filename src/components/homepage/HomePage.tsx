@@ -1,12 +1,12 @@
 import { Sparkles, Star } from "lucide-react";
 import Image from "next/image";
 import React from "react";
-import user1 from "@/public/assets/users/user-1.png";
-import user2 from "@/public/assets/users/user-2.png";
-import user3 from "@/public/assets/users/user-3.png";
-import user4 from "@/public/assets/users/user-4.jpg";
-import user5 from "@/public/assets/users/user-5.jpg";
-import Chatgpt from "@/public/assets/chatgpt.svg";
+import user1 from "@/public/users/user-1.png";
+import user2 from "@/public/users/user-2.png";
+import user3 from "@/public/users/user-3.png";
+import user4 from "@/public/users/user-4.jpg";
+import user5 from "@/public/users/user-5.jpg";
+import Chatgpt from "@/public/chatgpt.svg";
 
 export default function HomePage() {
   return (
@@ -85,7 +85,7 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="w-full max-w-sm bg-white shadow-md rounded-xl border">
+          <div className="w-full text-start max-w-sm bg-white shadow-md rounded-xl border">
             <div className="p-3 md:p-[0.6rem] flex flex-col gap-2">
               <div className="flex space-x-2 p-2">
                 <Image 
