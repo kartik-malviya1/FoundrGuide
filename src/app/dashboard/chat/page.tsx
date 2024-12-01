@@ -1,15 +1,15 @@
 'use client'
-import React, { useState, useRef, useEffect } from "react"
-import { Card, CardHeader } from "@/components/ui/card"
-import { Button } from "@/components/ui/button"
-import { useSearchParams, useRouter } from 'next/navigation'
-import { Sparkles, BookOpen, Target, Lightbulb, Send, Smile, Paperclip, Mic, ImageIcon } from 'lucide-react'
-import { UserButton, useUser } from "@clerk/nextjs"
 import Link from "next/link"
-import { baseUrl } from "@/base_url"
-import { format } from 'date-fns'
 import { toast } from 'sonner'
+import { format } from 'date-fns'
+import { baseUrl } from "@/base_url"
 import ReactMarkdown from 'react-markdown'
+import { Button } from "@/components/ui/button"
+import { UserButton, useUser } from "@clerk/nextjs"
+import { Card, CardHeader } from "@/components/ui/card"
+import { useSearchParams, useRouter } from 'next/navigation'
+import React, { useState, useRef, useEffect } from "react"
+import { Sparkles, BookOpen, Target, Lightbulb, Send, Smile, Paperclip, Mic, ImageIcon } from 'lucide-react'
 
 interface ChatMessage {
   sender: 'user' | 'ai'
@@ -17,6 +17,13 @@ interface ChatMessage {
   timestamp: Date
   status?: 'sending' | 'sent' | 'error'
 }
+interface ChatInterfaceProps {
+  initialMessages?: ChatMessage[];  // Optional messages
+  onChatCreated?: () => void;       // Optional callback
+  bookId?: string | null;            // Optional book ID
+  bookTitle?: string | null;         // Optional book title
+}
+
 
 const getSessionId = () => {
   if (typeof window !== 'undefined') {
@@ -36,19 +43,16 @@ const clearSessionId = () => {
     localStorage.removeItem('chatSessionId');
   }
 };
-
 export default function ChatInterface({
   initialMessages,
   onChatCreated,
-}: {
-  initialMessages?: ChatMessage[]
-  bookId?: string | null
-  bookTitle?: string | null
-  onChatCreated?: () => void
-}) {
+  bookId: propBookId, // rename to avoid conflict
+  bookTitle: propBookTitle, // rename to avoid conflict
+}: ChatInterfaceProps) {
   const searchParams = useSearchParams()
-  const bookId = searchParams.get('bookId')
-  const bookTitle = searchParams.get('title')
+  const bookId = propBookId || searchParams.get('bookId') // use prop or fallback to search param
+  const bookTitle = propBookTitle || searchParams.get('title') // use prop or fallback to search param
+  
   const [message, setMessage] = useState('')
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>(initialMessages || [])
   const [isLoading, setIsLoading] = useState(false)
