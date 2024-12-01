@@ -1,4 +1,4 @@
-import { createUploadthing, type FileRouter } from "uploadthing/next"
+import { createUploadthing, type FileRouter } from "uploadthing/next";
  
 const f = createUploadthing()
 
@@ -7,7 +7,7 @@ export const ourFileRouter = {
     .middleware(() => {
       return {}; // Add auth logic here if needed
     })
-    .onUploadComplete(async ({ metadata, file }) => {
+    .onUploadComplete(async ({ file }) => {
       console.log("Upload complete:", file.url);
       return { url: file.url }
     })

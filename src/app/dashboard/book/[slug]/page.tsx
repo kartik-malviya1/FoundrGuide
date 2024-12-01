@@ -1,9 +1,9 @@
-import { auth } from "@clerk/nextjs/server";
-import { redirect } from "next/navigation";
-import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { auth } from "@clerk/nextjs/server";
+import Image from "next/image";
+import { redirect } from "next/navigation";
 
-export default async function BookPage({ params }: { params: { slug: string } }) {
+export default async function BookPage({}: { params: { slug: string } }) {
   const { userId } = await auth();
   
   if (!userId) {

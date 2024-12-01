@@ -20,27 +20,33 @@ interface Props {
   users: User[]
 }
 
+// Add type definition for the expected response
+interface RoleUpdateResponse {
+  success: boolean;
+  message: string;
+}
+
 export default function UserManagement({ users }: Props) {
   const [searchTerm, setSearchTerm] = useState('')
   const router = useRouter()
 
   const handleRoleUpdate = async (formData: FormData) => {
-    const result = await setRole(formData)
+    const result = await setRole(formData) as RoleUpdateResponse;  // Type assertion
     if (result.success) {
       toast.success(result.message)
       router.refresh()
     } else {
-      toast.error(result.message)
+      toast.error(result.message as string)
     }
   }
 
   const handleRoleRemoval = async (formData: FormData) => {
-    const result = await removeRole(formData)
+    const result = await removeRole(formData) as RoleUpdateResponse
     if (result.success) {
-      toast.success(result.message)
+      toast.success(result.message as string)
       router.refresh()
     } else {
-      toast.error(result.message)
+      toast.error(result.message as string)
     }
   }
 
