@@ -40,16 +40,16 @@ export interface ChatMessage {
 
 export interface ChatInterfaceProps {
   initialMessages: ChatMessage[];
-  bookId?: string | undefined;
-  bookTitle?: string | undefined;
+  bookId?: string;
+  bookTitle?: string;
   onChatCreated?: () => void;
 }
 
 export default function ChatInterface({
   initialMessages =[],
   onChatCreated,
-  bookId: BookId,
-  bookTitle: BookTitle,
+  bookId: BookId = '',
+  bookTitle: BookTitle = '',
 }:ChatInterfaceProps) 
 {
   const searchParams = useSearchParams();

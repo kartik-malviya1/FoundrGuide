@@ -48,17 +48,17 @@ export default function ChatPage({ params }: { params: { chatId: string } }) {
     return <div>Chat not found</div>;
   }
 
-  const formattedMessages = chatData?.messages.map(msg => ({
+  const formattedMessages: ChatMessage[] = chatData.messages.map((msg) => ({
     ...msg,
-    timestamp: new Date(msg.timestamp)
-  })) || [];
+    timestamp: new Date(msg.timestamp), // Ensures correct type for timestamp
+  }));
 
   const chatProps: ChatInterfaceProps = {
     initialMessages: formattedMessages,
-    bookId: bookId || undefined,
-    bookTitle: bookTitle || undefined,
-    onChatCreated: refetch
+    bookId: bookId ?? undefined,
+    bookTitle: bookTitle ?? undefined,
+    onChatCreated: refetch,
   };
-
+  
   return <ChatInterface {...chatProps} />;
-}
+}  
