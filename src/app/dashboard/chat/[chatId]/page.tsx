@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { baseUrl } from '@/base_url';
 import { useUser } from '@clerk/nextjs';
-import ChatInterface from '../page';
+import ChatInterface from '@/components/chat/ChatInterface';
 import { useChatHistory } from '@/hooks/use-chat-history';
 
 interface ChatMessage {
