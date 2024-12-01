@@ -45,13 +45,12 @@ export interface ChatInterfaceProps {
   onChatCreated?: () => void;
 }
 
-export default function ChatInterface({
-  initialMessages =[],
+const ChatInterface: React.FC<ChatInterfaceProps> = ({
+  initialMessages = [],
   onChatCreated,
   bookId: BookId = '',
   bookTitle: BookTitle = '',
-}:ChatInterfaceProps) 
-{
+}) => {
   const searchParams = useSearchParams();
   const bookId = BookId || searchParams.get('bookId') || '';
   const bookTitle = BookTitle || searchParams.get('title') || '';
@@ -347,7 +346,7 @@ export default function ChatInterface({
         </div>
       </main>
 
-      <footer 
+      <div 
         className="fixed bottom-0 left-0 right-0 bg-white/80 backdrop-blur-sm border-t border-gray-100 p-4 shadow-lg flex justify-center items-center w-full sm:ml-[8rem]"
       >
         <div className="w-full max-w-3xl mx-auto">
@@ -428,8 +427,10 @@ export default function ChatInterface({
             </div>
           </div>
         </div>
-      </footer>
+      </div>
     </div>
   )
 }
+
+export default ChatInterface;
 
