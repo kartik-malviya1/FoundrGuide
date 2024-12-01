@@ -1,1 +1,1 @@
-export const baseUrl = 'http://localhost:5455';
+export const baseUrl = 'https://fg-backend.onrender.com';
