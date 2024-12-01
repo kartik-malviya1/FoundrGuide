@@ -11,12 +11,6 @@ import { useSearchParams, useRouter } from 'next/navigation'
 import React, { useState, useRef, useEffect } from "react"
 import { Sparkles, BookOpen, Target, Lightbulb, Send, Smile, Paperclip, Mic, ImageIcon } from 'lucide-react'
 
-interface ChatMessage {
-  sender: 'user' | 'ai';
-  message: string;
-  timestamp: Date | string;
-  status?: 'sending' | 'sent' | 'error';
-}
 
 const getSessionId = () => {
   if (typeof window !== 'undefined') {
@@ -36,6 +30,14 @@ const clearSessionId = () => {
     localStorage.removeItem('chatSessionId');
   }
 };
+
+export interface ChatMessage {
+  sender: 'user' | 'ai';
+  message: string;
+  timestamp: Date | string;
+  status?: 'sending' | 'sent' | 'error';
+}
+
 export default function ChatInterface({
   initialMessages = [],
   onChatCreated,
