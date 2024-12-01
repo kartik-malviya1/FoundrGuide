@@ -3,15 +3,8 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { baseUrl } from '@/base_url';
 import { useUser } from '@clerk/nextjs';
-import ChatInterface from '@/components/chat/ChatInterface';
+import ChatInterface, { ChatMessage } from '@/components/chat/ChatInterface';
 import { useChatHistory } from '@/hooks/use-chat-history';
-
-interface ChatMessage {
-  sender: 'user' | 'ai';
-  message: string;
-  timestamp: Date;
-  status?: 'sending' | 'sent' | 'error';
-}
 
 interface ChatData {
   _id: string;
