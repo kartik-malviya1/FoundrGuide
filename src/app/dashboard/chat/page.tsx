@@ -12,11 +12,12 @@ import React, { useState, useRef, useEffect } from "react"
 import { Sparkles, BookOpen, Target, Lightbulb, Send, Smile, Paperclip, Mic, ImageIcon } from 'lucide-react'
 
 interface ChatMessage {
-  sender: 'user' | 'ai'
-  message: string
-  timestamp: Date
-  status?: 'sending' | 'sent' | 'error'
+  sender: 'user' | 'ai';
+  message: string;
+  timestamp: Date | string; // Allow string for API response
+  status?: 'sending' | 'sent' | 'error';
 }
+
 interface ChatInterfaceProps {
   initialMessages?: ChatMessage[];  // Optional messages
   onChatCreated?: () => void;       // Optional callback
@@ -44,21 +45,21 @@ const clearSessionId = () => {
   }
 };
 export default function ChatInterface({
-  initialMessages,
+  initialMessages = [],
   onChatCreated,
-  bookId: propBookId, // rename to avoid conflict
-  bookTitle: propBookTitle, // rename to avoid conflict
+  bookId: propBookId,
+  bookTitle: propBookTitle,
 }: ChatInterfaceProps) {
-  const searchParams = useSearchParams()
-  const bookId = propBookId || searchParams.get('bookId') // use prop or fallback to search param
-  const bookTitle = propBookTitle || searchParams.get('title') // use prop or fallback to search param
-  
-  const [message, setMessage] = useState('')
-  const [chatHistory, setChatHistory] = useState<ChatMessage[]>(initialMessages || [])
-  const [isLoading, setIsLoading] = useState(false)
-  const { user } = useUser()
-  const textareaRef = useRef<HTMLTextAreaElement>(null)
-  const chatContainerRef = useRef<HTMLDivElement>(null)
+  const searchParams = useSearchParams();
+  const bookId = propBookId || searchParams.get('bookId') || '';
+  const bookTitle = propBookTitle || searchParams.get('title') || '';
+
+  const [message, setMessage] = useState('');
+  const [chatHistory, setChatHistory] = useState<ChatMessage[]>(initialMessages);
+  const [isLoading, setIsLoading] = useState(false);
+  const { user } = useUser();
+  const textareaRef = useRef<HTMLTextAreaElement>(null);
+  const chatContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter()
 
   useEffect(() => {
