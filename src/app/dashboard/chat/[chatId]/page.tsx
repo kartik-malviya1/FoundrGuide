@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { baseUrl } from '@/base_url';
 import { useUser } from '@clerk/nextjs';
-import ChatInterface, { ChatMessage } from '@/components/chat/ChatInterface';
+import ChatInterface, { ChatMessage, ChatInterfaceProps } from '@/components/chat/ChatInterface';
 import { useChatHistory } from '@/hooks/use-chat-history';
 
 interface ChatData {
@@ -48,17 +48,17 @@ export default function ChatPage({ params }: { params: { chatId: string } }) {
     return <div>Chat not found</div>;
   }
 
-  const formattedMessages = chatData.messages.map(msg => ({
+  const formattedMessages = chatData?.messages.map(msg => ({
     ...msg,
     timestamp: new Date(msg.timestamp)
-  }));
+  })) || [];
 
-  return (
-    <ChatInterface 
-      initialMessages={formattedMessages}
-      bookId={bookId || undefined}
-      bookTitle={bookTitle || undefined}
-      onChatCreated={refetch}
-    />
-  );
+  const chatProps: ChatInterfaceProps = {
+    initialMessages: formattedMessages,
+    bookId: bookId || undefined,
+    bookTitle: bookTitle || undefined,
+    onChatCreated: refetch
+  };
+
+  return <ChatInterface {...chatProps} />;
 }

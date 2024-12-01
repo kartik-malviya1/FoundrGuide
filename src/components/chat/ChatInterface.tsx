@@ -38,21 +38,23 @@ export interface ChatMessage {
   status?: 'sending' | 'sent' | 'error';
 }
 
+export interface ChatInterfaceProps {
+  initialMessages: ChatMessage[];
+  bookId?: string | undefined;
+  bookTitle?: string | undefined;
+  onChatCreated?: () => void;
+}
+
 export default function ChatInterface({
-  initialMessages = [],
+  initialMessages =[],
   onChatCreated,
-  bookId: propBookId,
-  bookTitle: propBookTitle,
-}:{
-  initialMessages?: ChatMessage[];  // Optional messages
-  onChatCreated?: () => void;       // Optional callback
-  bookId?: string | null;            // Optional book ID
-  bookTitle?: string | null;         // Optional book title
-}) 
+  bookId: BookId,
+  bookTitle: BookTitle,
+}:ChatInterfaceProps) 
 {
   const searchParams = useSearchParams();
-  const bookId = propBookId || searchParams.get('bookId') || '';
-  const bookTitle = propBookTitle || searchParams.get('title') || '';
+  const bookId = BookId || searchParams.get('bookId') || '';
+  const bookTitle = BookTitle || searchParams.get('title') || '';
 
   const [message, setMessage] = useState('');
   const [chatHistory, setChatHistory] = useState<ChatMessage[]>(initialMessages);
