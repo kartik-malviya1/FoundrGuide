@@ -14,7 +14,7 @@ import { Sparkles, BookOpen, Target, Lightbulb, Send, Smile, Paperclip, Mic, Ima
 interface ChatMessage {
   sender: 'user' | 'ai';
   message: string;
-  timestamp: Date | string; // Allow string for API response
+  timestamp: Date | string;
   status?: 'sending' | 'sent' | 'error';
 }
 
