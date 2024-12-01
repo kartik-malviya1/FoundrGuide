@@ -1,23 +1,16 @@
 'use client'
-import { SignOutButton } from '@clerk/nextjs'
-import { Home, Search, Library, Highlighter, Settings, HelpCircle, LogOut, Menu, X, MessageSquare, Plus, Trash2, LucideIcon } from 'lucide-react'
-import { usePathname, useRouter } from 'next/navigation'
+import { baseUrl } from '@/base_url'
+import { Button } from "@/components/ui/button"
+import { Skeleton } from '@/components/ui/skeleton'
+import { useChatHistory } from '@/hooks/use-chat-history'
 import Logo from '@/public/FrLogo.png'
+import { SignOutButton, useUser } from '@clerk/nextjs'
+import clsx from 'clsx'
+import { HelpCircle, Highlighter, Home, Library, LogOut, LucideIcon, Menu, MessageSquare, Plus, Search, Settings, Trash2, X } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState, useEffect, useCallback, useMemo } from 'react'
-import { useChatHistory } from '@/hooks/use-chat-history'
-import { Skeleton } from '@/components/ui/skeleton'
-import { Button } from "@/components/ui/button"
-import { baseUrl } from '@/base_url'
-import { useUser } from '@clerk/nextjs'
-import clsx from 'clsx'
-
-type Chat = {
-  _id: string;
-  title: string;
-  createdAt: string;
-}
+import { usePathname, useRouter } from 'next/navigation'
+import { useCallback, useEffect, useMemo, useState } from 'react'
 
 type SidebarItem = {
   name: string;
