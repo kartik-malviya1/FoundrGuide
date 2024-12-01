@@ -18,14 +18,6 @@ interface ChatMessage {
   status?: 'sending' | 'sent' | 'error';
 }
 
-interface ChatInterfaceProps {
-  initialMessages?: ChatMessage[];  // Optional messages
-  onChatCreated?: () => void;       // Optional callback
-  bookId?: string | null;            // Optional book ID
-  bookTitle?: string | null;         // Optional book title
-}
-
-
 const getSessionId = () => {
   if (typeof window !== 'undefined') {
     return localStorage.getItem('chatSessionId') || Date.now().toString();
@@ -49,7 +41,13 @@ export default function ChatInterface({
   onChatCreated,
   bookId: propBookId,
   bookTitle: propBookTitle,
-}: ChatInterfaceProps) {
+}:{
+  initialMessages?: ChatMessage[];  // Optional messages
+  onChatCreated?: () => void;       // Optional callback
+  bookId?: string | null;            // Optional book ID
+  bookTitle?: string | null;         // Optional book title
+}) 
+{
   const searchParams = useSearchParams();
   const bookId = propBookId || searchParams.get('bookId') || '';
   const bookTitle = propBookTitle || searchParams.get('title') || '';
