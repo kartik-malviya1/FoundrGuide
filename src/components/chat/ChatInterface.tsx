@@ -267,12 +267,10 @@ export default function ChatInterface({
       <header className="bg-white border-gray-100 p-4 fixed right-0 z-10">
         <div className="max-w-full mx-auto flex space-x-[65rem] items-center">
           <Link href={'/dashboard/chat'}>
-            <div className="flex items-center space-x-2">
-              <h2 className="text-2xl font-semibold text-blue-800 flex  gap-1">
-                <Sparkles className="h-6 w-6"/>
-                AI Assistant
+          <div className="flex items-center space-x-2">
+              <h2 className="text-2xl font-semibold text-blue-800 flex gap-1">
                 {bookTitle && (
-                  <span className="text-sm font-normal text-gray-600 ml-2">
+                  <span className="text-sm font-normal text-gray-600 fixed top-5 left-[18rem]">
                     • Discussing: {bookTitle}
                   </span>
                 )}
