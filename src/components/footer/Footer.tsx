@@ -41,7 +41,7 @@ export const Footer = () => {
               <li className="text-gray-300 hover:underline">Join Forum</li>
               <li className="text-gray-300 hover:underline">Events</li>
               <li className="text-gray-300 hover:underline">Webinars</li>
-              <li" className="text-gray-300 hover:underline">Mentorship</li>
+              <li className="text-gray-300 hover:underline">Mentorship</li>
               <li className="text-gray-300 hover:underline">Feedback</li>
             </ul>
           </div>
