@@ -9,7 +9,7 @@ import {
 } from "@radix-ui/react-icons";
 import { Button } from "../ui/button";
 
-export const Footer = () => {
+function Footer() {
   return (
     <footer className="w-full bg-footercolor text-white ">
       <div className="container mx-auto px-4 py-8 lg:px-20">
@@ -111,4 +111,6 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}
+
+export default Footer;
