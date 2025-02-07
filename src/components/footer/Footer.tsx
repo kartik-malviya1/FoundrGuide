@@ -25,37 +25,37 @@ export const Footer = () => {
           {/* Resources Section */}
           <div className="space-y-3">
             <h2 className="font-semibold text-base">Resources</h2>
-            <div className="flex flex-col space-y-2 text-sm">
-              <Link href="/book-summaries" className="text-gray-300 hover:underline">Book Summaries</Link>
-              <Link href="/startup-tips" className="text-gray-300 hover:underline">Startup Tips</Link>
-              <Link href="/founders-guide" className="text-gray-300 hover:underline">Founder&apos;s Guide</Link>
-              <Link href="/success-stories" className="text-gray-300 hover:underline">Success Stories</Link>
-              <Link href="/contact" className="text-gray-300 hover:underline">Contact Us</Link>
-            </div>
+            <ul className="flex flex-col space-y-2 text-sm">
+              <li className="text-gray-300 hover:underline">Book Summaries</li>
+              <li className="text-gray-300 hover:underline">Startup Tips</li>
+              <li className="text-gray-300 hover:underline">Founder&apos;s Guide</li>
+              <li className="text-gray-300 hover:underline">Success Stories</li>
+              <li className="text-gray-300 hover:underline">Contact Us</li>
+            </ul>
           </div>
 
           {/* Community Section */}
           <div className="space-y-3">
             <h2 className="font-semibold text-base">Community</h2>
-            <div className="flex flex-col space-y-2 text-sm">
-              <Link href="/forum" className="text-gray-300 hover:underline">Join Forum</Link>
-              <Link href="/events" className="text-gray-300 hover:underline">Events</Link>
-              <Link href="/webinars" className="text-gray-300 hover:underline">Webinars</Link>
-              <Link href="/mentorship" className="text-gray-300 hover:underline">Mentorship</Link>
-              <Link href="/feedback" className="text-gray-300 hover:underline">Feedback</Link>
-            </div>
+            <ul className="flex flex-col space-y-2 text-sm">
+              <li className="text-gray-300 hover:underline">Join Forum</li>
+              <li className="text-gray-300 hover:underline">Events</li>
+              <li className="text-gray-300 hover:underline">Webinars</li>
+              <li" className="text-gray-300 hover:underline">Mentorship</li>
+              <li className="text-gray-300 hover:underline">Feedback</li>
+            </ul>
           </div>
 
           {/* Stay Connected Section */}
           <div className="space-y-3">
             <h2 className="font-semibold text-base">Stay Connected</h2>
-            <div className="flex flex-col space-y-2 text-sm">
-              <Link href="/newsletter" className="text-gray-300 hover:underline">Newsletter</Link>
-              <Link href="/social" className="text-gray-300 hover:underline">Social Media</Link>
-              <Link href="/blog" className="text-gray-300 hover:underline">Blog Updates</Link>
-              <Link href="/support" className="text-gray-300 hover:underline">Support</Link>
-              <Link href="/faqs" className="text-gray-300 hover:underline">FAQs</Link>
-            </div>
+            <ul className="flex flex-col space-y-2 text-sm">
+              <li className="text-gray-300 hover:underline">Newsletter</li>
+              <li className="text-gray-300 hover:underline">Social Media</li>
+              <li className="text-gray-300 hover:underline">Blog Updates</li>
+              <li className="text-gray-300 hover:underline">Support</li>
+              <li className="text-gray-300 hover:underline">FAQs</li>
+            </ul>
           </div>
 
           {/* Subscribe Section */}
@@ -72,6 +72,7 @@ export const Footer = () => {
                 placeholder="Enter your email"
               />
               <Button
+                onClick={(e)=>e.stopPropagation()}
                 variant={"outline"}
                 className="w-full hover:border-blue-600 hover:text-blue-600 text-black"
               >
@@ -89,8 +90,10 @@ export const Footer = () => {
           <div className="flex flex-col md:flex-row justify-around items-center space-y-4 md:space-y-0">
             <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 text-sm text-gray-300">
               <p>© 2024 FoundrGuide. All rights reserved.</p>
-              <Link href="/privacy" className="hover:underline">Privacy Policy</Link>
-              <Link href="/terms" className="hover:underline">Terms of Service</Link>
+              <ul className="className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4">
+              <li className="hover:underline">Privacy Policy</li>
+              <li className="hover:underline">Terms of Service</li>
+              </ul>
             </div>
             <div className="flex items-center space-x-4">
               <Link href="#" className="hover:text-blue-600">
