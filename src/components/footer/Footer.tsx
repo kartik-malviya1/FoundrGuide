@@ -11,7 +11,7 @@ import {
 } from "@radix-ui/react-icons";
 import { Button } from "../ui/button";
 
-function Footer() {
+export function Footer() {
   return (
     <footer className="w-full bg-footercolor text-white">
       <div className="container mx-auto px-4 py-8 lg:px-20">
@@ -30,7 +30,9 @@ function Footer() {
             <ul className="flex flex-col space-y-2 text-sm">
               <li className="text-gray-300 hover:underline">Book Summaries</li>
               <li className="text-gray-300 hover:underline">Startup Tips</li>
-              <li className="text-gray-300 hover:underline">Founder's Guide</li>
+              <li className="text-gray-300 hover:underline">
+                Founder&apos;s Guide
+              </li>
               <li className="text-gray-300 hover:underline">Success Stories</li>
               <li className="text-gray-300 hover:underline">Contact Us</li>
             </ul>
@@ -114,5 +116,3 @@ function Footer() {
     </footer>
   );
 }
-
-export default Footer;
